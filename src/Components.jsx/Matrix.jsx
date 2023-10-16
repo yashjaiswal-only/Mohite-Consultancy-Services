@@ -7,6 +7,7 @@ const Container=styled.div`
     justify-content: space-between;
     flex-wrap:wrap;
     z-index:1000;
+    margin-top:5rem;
 `
 const Wrapper=styled.div`
     width:30%;

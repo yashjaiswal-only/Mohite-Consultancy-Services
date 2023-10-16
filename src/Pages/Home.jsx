@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Topbar from '../Components.jsx/Topbar'
 import Hero from '../Components.jsx/Hero'
 import Services from '../Components.jsx/Services'
+import Footer from '../Components.jsx/Footer'
 
 const Container=styled.div`
   width:100vw;
@@ -31,6 +32,7 @@ const Home = () => {
       <Topbar/>
       <Hero/>
       <Services/>
+      <Footer/>
     </Container>
   )
 }

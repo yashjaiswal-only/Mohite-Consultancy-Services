@@ -81,7 +81,7 @@ const Services = () => {
         <section/>
         <span>To remain with us, it is essential that you diligently follow the steps provided</span>
         <Matrix/>
-        <Terms>* For forms AOC-4 and MGT-7, you will be charged a penalty of ₹200 every day until you file the form . There is no maximum penalty amount. So, if you don't file the form for a year, you will owe ₹73,000 per form</Terms>
+        <Terms>* For forms AOC-4 and MGT-7, you will be charged a penalty of ₹200 <span>every day</span> until you file the form . There is no maximum penalty amount. So, if you don't file the form for a year, you will owe ₹73,000 per form</Terms>
     </Wrapper>
     </Container>
   )
