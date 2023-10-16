@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import Topbar from '../Components.jsx/Topbar'
-import Hero from '../Components.jsx/Hero'
-import Services from '../Components.jsx/Services'
-import Footer from '../Components.jsx/Footer'
+import Topbar from '../Components/Topbar'
+import Hero from '../Components/Hero'
+import Services from '../Components/Services'
+import Footer from '../Components/Footer'
+import Connect from '../Components/Connect'
 
 const Container=styled.div`
   width:100vw;
@@ -32,6 +33,7 @@ const Home = () => {
       <Topbar/>
       <Hero/>
       <Services/>
+      <Connect/>
       <Footer/>
     </Container>
   )
