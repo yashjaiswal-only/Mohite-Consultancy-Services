@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Topbar from '../Components/Topbar'
 import Footer from '../Components/Footer'
 import Info from '../Components/Info'
+import Recommendation from '../Components/Recommendation'
 
 const Container=styled.div`
   width:100vw;
@@ -20,6 +21,7 @@ const Details = () => {
     <Container>
       <Topbar/>
       <Info/>
+      <Recommendation/>
       <Footer/>
     </Container>
   )

@@ -51,7 +51,7 @@ const Item=styled.div`
     width:45%;
     display: flex;
     align-items: flex-start;
-    margin:1rem;
+    margin:1rem 0.5rem;
     div{
         color: var(--fs-search-text, #000);
         font-family: Poppins;

@@ -49,7 +49,7 @@ const Left=styled.div`
             margin:2rem auto 0;
         }
         >div{
-            width:90%;
+            width:100%;
             display: flex;
             justify-content: space-between;
             span{
