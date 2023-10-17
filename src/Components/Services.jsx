@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Matrix from './Matrix'
-
+import mobile ,{tab} from '../responsive'
 const Container=styled.div`
     display: flex;
     flex-direction: column;
@@ -24,11 +24,18 @@ const Container=styled.div`
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        ${tab({
+            fontSize:'50px'
+        })}
+        ${mobile({
+            fontSize:'30px'
+        })}
     }
 `
 const Wrapper=styled.div`
     width:100%;
-    height:757px;
+    min-height:757px;
+    max-height:max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +48,15 @@ const Wrapper=styled.div`
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
-        line-height: 38px; /* 158.333% */
+        line-height: 38px;
+        width:90%;
+        ${tab({
+            fontSize:'20px',
+            lineHeight:'normal'
+        })}
+        ${mobile({
+            fontSize:'15px'
+        })}
     }
     svg{
         position: absolute;
@@ -67,6 +82,11 @@ const Terms=styled.div`
     span{
         font-weight: 700;
     }
+    ${mobile({
+        fontSize:'12px',
+        lineHeight:'normal',
+        width:'80%'
+    })}
 `
 const Services = () => {
   return (

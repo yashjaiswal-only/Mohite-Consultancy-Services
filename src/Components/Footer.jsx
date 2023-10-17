@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 import logo from '../Assests/footerlogo.png'
-
+import mobile,{tab} from '../responsive'
 const Container=styled.div`
     width:100%;
     background: var(--gradient-footer, linear-gradient(96deg, #0076CE -7.82%, #9400D3 143.96%));
 `
 const Wrapper=styled.div`
     padding:1rem 4rem;
+    ${mobile({
+        padding:'1rem 2rem'
+    })}
 `
 const Left=styled.div`
     color: #FFF;
@@ -19,21 +22,53 @@ const Left=styled.div`
     display: flex;
     flex-direction: column;
     width:${props=>props.bottom?'60%':'20%'};
+    ${mobile({
+        display:'none'
+    })}
     img{
         width: 138px;
         height: 70px;
         mix-blend-mode: luminosity;
+        ${mobile({
+            width:'100px'
+        })}
     }
 `
-const Row=styled.div`
+const Row1=styled.div`
     display: flex;
     justify-content: space-between;
 `
+const Row2=styled.div`
+    display: flex;
+    justify-content: space-between;
+    color: #FFF;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px; /* 157.143% */
+    >div{
+        width:25%;
+        display: flex;
+        text-align:center;
+        justify-content: space-around;
+        ${mobile({
+            width:'100%'
+        })}
+    }
+    ${mobile({
+        flexDirection:'column'
+    })}
+`
 const Right=styled.div`
-    width:${props=>props.bottom?'20%':'70%'};
+    width:${props=>props.bottom?'25%':'70%'};
     align-items:${props=>props.bottom?'center':'flex-start'};
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    ${mobile({
+        width:'max-content'
+    })}
     >div{
         display: flex;
         flex-direction: column;
@@ -45,7 +80,11 @@ const Right=styled.div`
         line-height: 22px; /* 137.5% */
         span{
             margin:0.5rem;
+            
         }
+        ${mobile({
+            fontSize:'12px'
+        })}
     }
 `
 const Copyright=styled.div`
@@ -63,7 +102,7 @@ const Footer = () => {
   return (
     <Container>
       <Wrapper>
-        <Row>
+        <Row1>
             <Left>
                 <img src={logo}/>
                 India's first platform dedicated to simplifying partner search
@@ -99,11 +138,11 @@ const Footer = () => {
                     <span>Accessibility</span>
                 </div>
             </Right>
-        </Row>
+        </Row1>
         <hr/>
-        <Row>
-            <Left bottom>Sambhaji Nagar, No2, St. Antony Road, Chembur, Mumbai - 400071, Maharashtra</Left>
-            <Right bottom>
+        <Row2>
+            <div style={{width:'100%'}}>Sambhaji Nagar, No2, St. Antony Road, Chembur, Mumbai - 400071, Maharashtra</div>
+            <div >
                 <a href="https://www.instagram.com/mohitetax_/">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12.5325C22 7.00947 17.523 2.53247 12 2.53247C6.477 2.53247 2 7.00947 2 12.5325C2 17.5235 5.657 21.6605 10.438 22.4105V15.4235H7.898V12.5325H10.438V10.3295C10.438 7.82347 11.93 6.43947 14.215 6.43947C15.309 6.43947 16.453 6.63447 16.453 6.63447V9.09447H15.193C13.95 9.09447 13.563 9.86547 13.563 10.6565V12.5325H16.336L15.893 15.4225H13.563V22.4105C18.343 21.6605 22 17.5235 22 12.5325Z" fill="white"/>
@@ -131,8 +170,8 @@ const Footer = () => {
                 </defs>
                 </svg>
                 </a>
-            </Right>
-        </Row>
+            </div>
+        </Row2>
       </Wrapper>
       <Copyright>
       Registered trademark of India Private Limited © 2023 loerumipsum Inc. All Rights Reserved

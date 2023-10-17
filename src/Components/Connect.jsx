@@ -6,18 +6,30 @@ import connect from '../Assests/connect.svg'
 import research from '../Assests/research.svg'
 import boypik from '../Assests/boy.png'
 import girlpik from '../Assests/girl.png'
+import mobile,{tab} from '../responsive'
+
 const Container=styled.div`
     width:100%;
     padding:4rem;
     box-sizing:border-box;
     background: var(--fs-search-surface-bg, #FAFBFC);
     display: flex;
+    ${tab({
+        flexDirection:'column',
+        alignItems:'center'
+    })}
+    ${mobile({
+        padding:'2rem'
+    })}
 `
 const Left=styled.div`
     width:55%;
     font-family: Poppins;
     font-style: normal;
     color: var(--fs-search-text, #000);
+    ${tab({
+        width:'100%'
+    })}
     p{
         margin:1rem 0;
         font-size: 55px;
@@ -29,16 +41,37 @@ const Left=styled.div`
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        ${tab({
+            fontSize:'40px'
+        })}
+        ${mobile({
+            fontSize:'30px'
+        })}
     }
     >span{
         font-size: 24px;
         font-weight: 400;
-        line-height: 38px; /* 158.333% */
+        line-height: 38px;
+        ${tab({
+            fontSize:'20px',
+            lineHeight:'normal'
+        })}
+        ${mobile({
+            fontSize:'16px',
+            lineHeight:'normal'
+        })}
     }
 `
 const Right=styled.div`
     width:45%;
     position: relative;
+    ${tab({
+        width:'80%',
+        height:'550px'
+    })}
+    ${mobile({
+        display:'none'
+    })}
 `
 const Grid=styled.div`
     display: flex;
@@ -52,6 +85,14 @@ const Item=styled.div`
     display: flex;
     align-items: flex-start;
     margin:1rem 0.5rem;
+    ${mobile({
+        margin:'0.5rem 0.3rem'
+    })}
+    >img{
+        ${tab({
+            width:'40px'
+        })}
+    }
     div{
         color: var(--fs-search-text, #000);
         font-family: Poppins;
@@ -62,6 +103,13 @@ const Item=styled.div`
         span{
             font-weight:700;
         }
+        ${tab({
+            fontSize:'18px',
+            lineHeight:'normal'
+        })}
+        ${mobile({
+            fontSize:'14px'
+        })}
     }
 `
 const BoyBox=styled.div`
@@ -115,8 +163,8 @@ const Boy=()=>{
     return(
         <BoyBox>
             <svg xmlns="http://www.w3.org/2000/svg" width="233" height="310" viewBox="0 0 233 310" fill="none">
-  <path fill-rule="evenodd" clip-rule="evenodd" d="M232.117 157.811C232.126 200.963 219.152 243.708 192.605 273.144C166.842 301.71 130.717 312.068 95.5652 309.224C62.7774 306.57 31.421 288.946 10.8974 258.44C-16.5268 217.677 18.3 186.813 18.3 147.657C18.3 108.5 1.04975 106.256 5.92257 58.8804C10.532 14.0654 62.2614 0.834357 95.5652 0.834345C131.585 0.834331 166.851 13.2989 192.556 42.5359C218.78 72.3633 232.108 114.671 232.117 157.811Z" fill="#EFD9F9"/>
-</svg>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M232.117 157.811C232.126 200.963 219.152 243.708 192.605 273.144C166.842 301.71 130.717 312.068 95.5652 309.224C62.7774 306.57 31.421 288.946 10.8974 258.44C-16.5268 217.677 18.3 186.813 18.3 147.657C18.3 108.5 1.04975 106.256 5.92257 58.8804C10.532 14.0654 62.2614 0.834357 95.5652 0.834345C131.585 0.834331 166.851 13.2989 192.556 42.5359C218.78 72.3633 232.108 114.671 232.117 157.811Z" fill="#EFD9F9"/>
+            </svg>
         <img src={boypik}/>
         </BoyBox>
     )
@@ -131,6 +179,7 @@ const Girl=()=>{
         </GirlBox>
     )
 }
+
 const Chats=()=>{
     return (
         <ChatBox>

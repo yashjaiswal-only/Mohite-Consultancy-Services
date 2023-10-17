@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import mobile ,{tab} from '../responsive'
 
 const Container=styled.div`
     width:95%;
@@ -8,12 +9,18 @@ const Container=styled.div`
     flex-wrap:wrap;
     z-index:1000;
     margin-top:5rem;
+    ${tab({
+        justifyContent:'space-around',
+        marginTop:'2rem'
+    })}
 `
 const Wrapper=styled.div`
     width:30%;
     background-color: white;
+    height:max-content;
     margin:1rem 0;
     padding:1rem;
+    box-sizing:border-box;
     position: relative;
     border-radius: 20px;
     background: var(--fs-search-card-bg, #FFF);
@@ -25,6 +32,12 @@ const Wrapper=styled.div`
     font-family: Poppins;
     font-style: normal;
     text-align: center;
+    ${tab({
+        width:'40%',
+    })}
+    ${mobile({
+        width:'80%',
+    })}
     >h3{
         position: absolute;
         top:-1rem;
@@ -39,6 +52,10 @@ const Wrapper=styled.div`
         font-weight: 700;
         line-height: normal;
         margin:0;
+        ${tab({
+            fontSize:'14px',
+            top:'-0.5rem'
+        })}
     }
     >p{
         font-size: 20px;
@@ -46,11 +63,17 @@ const Wrapper=styled.div`
         font-weight: 700;
         line-height: normal;
         margin:0;
+        ${tab({
+            fontSize:'18px'
+        })}
     }
     span{
         font-size: 16px;
         font-weight: 400;
         line-height: 26px; /* 162.5% */
+        ${tab({
+            fontSize:'14px'
+        })}
     }
     >div{
         border-radius: 10px;
@@ -70,15 +93,19 @@ const Column=styled.div`
     text-align:left;
     color: var(--fs-search-text, #000);
     font-family: Open Sans;
-    font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 26px; /* 162.5% */
     >div{
         color:${props=>props.left?'var(--fs-search-primary, #0076CE)':'var(--fs-search-red, #F66)'};
         font-size: 18px;
         font-weight: 700;
-        line-height: 28px; /* 155.556% */
+        line-height: 28px;
+        ${tab({
+            fontSize:'16px'
+        })}
+        ${mobile({
+            fontSize:'14px'
+        })}
     }
     >p{
         margin:0;
@@ -92,6 +119,12 @@ const Column=styled.div`
             font-weight: 700;
             text-decoration-line: underline;
         }
+        ${tab({
+            fontSize:'16px'
+        })}
+        ${mobile({
+            fontSize:'14px'
+        })}
     }
 `
 
