@@ -66,7 +66,7 @@ const Right=styled.div`
     width:45%;
     position: relative;
     ${tab({
-        width:'80%',
+        width:'100%',
         height:'550px'
     })}
     ${mobile({

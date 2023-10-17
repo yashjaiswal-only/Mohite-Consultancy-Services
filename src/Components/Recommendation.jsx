@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import recommendation from '../Assests/recommendation.png'
-
+import mobile,{tab} from '../responsive'
 const Container=styled.div`
     width:90%;
     margin-top:5rem;
@@ -10,9 +10,15 @@ const Container=styled.div`
     font-family: Poppins;
     font-style: normal;
     line-height: normal;
+    ${mobile({
+        marginTop:'2rem'
+    })}
     h1{
         font-weight: 700;
         font-size: 35px;
+        ${mobile({
+            fontSize:'20px'
+        })}
     }
 `
 const Wrapper=styled.div`
@@ -27,9 +33,13 @@ const Item=styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
     img{
         width:100%;
         border-radius: 20px;
+        ${mobile({
+            height:'80px'
+        })}
     }
     div{
         width:90%;
@@ -37,6 +47,9 @@ const Item=styled.div`
         font-weight:700;
         display: flex;
         justify-content: space-between;
+        ${mobile({
+            fontSize:'10px'
+        })}
         span{
             width:max-content;
         }
@@ -46,6 +59,15 @@ const Item=styled.div`
         display: flex;
         align-items: center;
         margin:0.5rem 0;
+        ${mobile({
+            fontSize:'10px',
+            margin:'0.2rem 0'
+        })}
+        >svg{
+            ${mobile({
+                width:'10px'
+            })}
+        }
         span{
             color:#0076CE;
             font-weight:700;
@@ -66,6 +88,12 @@ const Button=styled.button`
   font-weight: 700;
   line-height: 26px; /* 162.5% */
   cursor: pointer;
+  ${mobile({
+    padding:'5px 10px',
+    margin:'0.5rem',
+    fontSize:'12px',
+    lineHeight:'normal'
+  })}
 `
 const data=[
     {

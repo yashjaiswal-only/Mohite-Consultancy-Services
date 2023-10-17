@@ -85,7 +85,6 @@ const Input=styled.div`
   justify-content: space-between;
   input{
     width:100%;
-    /* margin:0 0 0 2rem; */
     padding:1rem 2rem;
     outline:none;
     color: #AEB0B4;
@@ -99,6 +98,7 @@ const Input=styled.div`
     ${tab({
       padding:'0.5rem 1rem'
     })}
+    
   }
   button{
     cursor: pointer;
@@ -114,6 +114,10 @@ const Input=styled.div`
     font-weight: 700;
     line-height: normal;
     border:none;
+    &:disabled{
+      color:#dccbcb;
+      cursor:not-allowed;
+    }
   }
 `
 const Right=styled.div`
@@ -202,18 +206,22 @@ const Error=styled.span`
 
 `
 const Hero = () => {
-  const [query,setQuery]=useState(null);
+  const [query,setQuery]=useState('');
   const [result,setResult]=useState([]);
+  const [load,setLoad]=useState(false);
   const [error,setError]=useState(false);
   const BASE_URL=import.meta.env.VITE_API;
   const navigate=useNavigate();
 
   const search=()=>{
     console.log('searching')
+    setError(false);
+    setLoad(true);
     axios.get(BASE_URL+query)
     .then(res=>{
       console.log(res)
       if(res.status===200)  setResult(res.data);
+      setLoad(false);
     })
     .catch(err=>{
       setError(true);
@@ -234,7 +242,7 @@ const Hero = () => {
         </section>
         <Input>
           <input placeholder='Search by name' value={query} onChange={e=>setQuery(e.target.value)}/>
-          <button onClick={search}>Search</button>
+          <button onClick={search} disabled={load}>{load?'Loading':"Search"}</button>
         </Input>
         {result.length?
           <ResultBox>

@@ -7,6 +7,13 @@ const Container=styled.div`
     display: flex;
     justify-content: space-between;
     margin-top:10rem;
+    ${tab({
+        flexDirection:'column',
+        marginTop:'5rem'
+    })}
+    ${mobile({
+        marginTop:'2rem'
+    })}
 `
 const Left=styled.div`
     width:40%;
@@ -16,9 +23,15 @@ const Left=styled.div`
     color: var(--fs-search-text, #000);
     font-style: normal;
     line-height: normal;
+    ${tab({
+        width:'90%'
+    })}
     >h2{
         font-size: 35px;
         font-weight: 700;
+        ${tab({
+            margin:'1rem 0'
+        })}
     }
     >span{
         font-size: 20px;
@@ -27,6 +40,9 @@ const Left=styled.div`
         display: flex;
         align-items: center;
         margin:1rem 0;
+        ${tab({
+            margin:'0.5rem 0'
+        })}
         >div{
             font-weight:700;
             color: var(--fs-search-primary, #0076CE);
@@ -43,9 +59,16 @@ const Left=styled.div`
         font-size: 20px;
         font-weight: 400;
         line-height: 32px; /* 160% */
+        ${mobile({
+            padding:'0.5rem'
+        })}
         >h2{
             font-size:35px;
-            font-weight:700;    
+            font-weight:700;
+            ${mobile({
+                fontSize:'25px',
+                margin:'0.5rem 0'
+            })}
         }
         >svg{
             margin:2rem auto 0;
@@ -57,8 +80,15 @@ const Left=styled.div`
             span{
                 font-size: 24px;
                 font-weight: 700;
-                line-height: normal;  
+                line-height: normal;
+                margin-left:0.5rem;
+                ${mobile({
+                    fontSize:'20px'
+                })}
             }
+            ${mobile({
+                fontSize:'18px'
+            })}
         }
         >span{
             width:90%;
@@ -68,6 +98,10 @@ const Left=styled.div`
             >svg{
                 margin-right:0.5rem;
             }
+            ${mobile({
+                fontSize:'18px',
+                margin:'0.5rem 0'
+            })}
         }
     }
 `
@@ -85,6 +119,10 @@ const Button=styled.button`
   font-weight: 700;
   line-height: 26px; /* 162.5% */
   cursor: pointer;
+  ${mobile({
+    padding:'5px 10px',
+    margin:'0.5rem'
+  })}
 `
 const Right=styled.div`
     width:55%;
@@ -94,6 +132,12 @@ const Right=styled.div`
     font-family: Poppins;
     font-style: normal;
     line-height: normal;
+    ${tab({
+        width:'90%'
+    })}
+    ${mobile({
+        width:'100%'
+    })}
     h1{
         font-size:35px;
         font-weight:700;
@@ -107,6 +151,9 @@ const Column=styled.div`
     display: flex;
     justify-content: space-between;
     margin:1rem 0;
+    ${mobile({
+        flexDirection:'column'
+    })}
 `
 const Item=styled.div`
     display: flex;
@@ -114,6 +161,9 @@ const Item=styled.div`
     font-size: 20px;
     font-weight: 400;
     color:#000;
+    ${mobile({
+        margin:'0.5rem 0'
+    })}
     span{
         color: #999;
         font-size: 16px;
