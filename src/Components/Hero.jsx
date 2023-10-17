@@ -5,13 +5,20 @@ import styled from 'styled-components'
 import picture1 from '../Assests/Picture1.png'
 import picture2 from '../Assests/Picture2.png'
 import picture3 from '../Assests/Picture3.png'
+import mobile, { tab } from '../responsive'
+
 const Container=styled.div`
   width:100%;
   min-height:100vh;
   box-sizing:border-box;
   display: flex;
   padding-top:10rem;
-  `
+  ${tab({
+    paddingTop:'5rem',
+    flexDirection:'column',
+    alignItems:'center'
+  })}
+`
 const Left=styled.div`
   width:60%;
   z-index:100;
@@ -20,6 +27,11 @@ const Left=styled.div`
   opacity:1;
   display: flex;
   flex-direction: column;
+  ${tab({
+    width:'80%',
+    margin:'0 0 2rem 0'
+  })}
+  
   >p{
     color: var(--fs-search-text, #000);
     color:black;
@@ -29,6 +41,14 @@ const Left=styled.div`
     font-weight: 700;
     line-height: 80px;
     margin:0;
+    ${tab({
+      fontSize:'50px',
+      lineHeight:'60px'
+    })}
+    ${mobile({
+      fontSize:'35px',
+      lineHeight:'40px'
+    })}
     span{
       background: linear-gradient(91deg, #0076CE 26.63%, #9400D3 65.81%);
       background-clip: text;
@@ -48,6 +68,10 @@ const Left=styled.div`
     >span{
       font-weight:700;
     }
+    ${tab({
+      fontSize:'18px',
+      lineHeight:'22px'
+    })}
   }
 `
 const Input=styled.div`
@@ -72,6 +96,9 @@ const Input=styled.div`
     line-height: normal;
     border:none;
     border-radius: 10px;
+    ${tab({
+      padding:'0.5rem 1rem'
+    })}
   }
   button{
     cursor: pointer;
@@ -94,6 +121,9 @@ const Right=styled.div`
   margin:0 2rem;
   height:60%;
   position: relative;
+  >img{
+    width:30%;
+  }
 `
 const Img=styled.img`
   height:80%;
@@ -109,17 +139,16 @@ const ResultBox=styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   >hr{
     width:90%;
   }
   &::-webkit-scrollbar {
     width: 0.3rem;               /* width of the entire scrollbar */
   }
-
   &::-webkit-scrollbar-track {
     background: outset;        /* color of the tracking area */
   }
-
   &::-webkit-scrollbar-thumb {
     background-color: #b6b6e4;    /* color of the scroll thumb */
     border-radius: 50px;       /* roundness of the scroll thumb */
@@ -147,6 +176,9 @@ const Entry=styled.div`
       width:90%;
       display: flex;
       justify-content: space-between;
+      ${mobile({
+        fontSize:'15px'
+      })}
     }
     span{
       display: flex;
@@ -156,6 +188,9 @@ const Entry=styled.div`
         width:max-content;
         font-weight:700;
       }
+      ${mobile({
+        fontSize:'15px'
+      })}
     }
 `
 const Error=styled.span`
@@ -174,6 +209,7 @@ const Hero = () => {
   const navigate=useNavigate();
 
   const search=()=>{
+    console.log('searching')
     axios.get(BASE_URL+query)
     .then(res=>{
       console.log(res)
