@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Topbar from '../Components/Topbar'
 import Hero from '../Components/Hero'
@@ -27,6 +27,9 @@ const Vector=styled.div`
 `
 
 const Home = () => {
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
   return (
     <Container>
       <Vector/>

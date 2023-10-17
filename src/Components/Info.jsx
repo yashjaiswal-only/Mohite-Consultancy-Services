@@ -119,35 +119,14 @@ const Item=styled.div`
     }
 `
 
-const data={
-    "id": 1,
-    "name": "Michael Jackson",
-    "image": "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?fit=crop&w=800&q=80",
-    "intro": "Expertise in accounting and finance, specializing in financial statements and auditing.",
-    "rating": 4.8,
-    "reviewCount": 89,
-    "taskComplexity": "Basic to complex tasks",
-    "price": "€4,370",
-    "deliveryTime": "Delivers within 2 days",
-    "testimonial": {
-      "text": "Exceptional service in managing personal finances and deep understanding of financial markets.",
-      "author": "John Doe"
-    },
-    "about": {
-      "from": "INDIA",
-      "partnerSince": 2011,
-      "averageResponseTime": "30 minutes",
-      "description": "Professional Chartered Accountant offering diverse accounting and financial services.",
-      "services": ["Financial accounting", "Bookkeeping", "Balance Sheets"],
-      "benefits": ["One-time delivery", "24/7 support"]
-    }
-  }
-const Info = () => {
-  return (
+
+const Info = ({data}) => {
+    console.log(data)
+  return (  
     <Container>
       <Left>
         <h2>{data.name}</h2>
-        <span>I am here to provide my expertise in accounting and finance, which includes financial statements, economics, and auditing, all to assist you effectively</span>
+        <span>{data.intro}</span>
         <span>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z" fill="#0076CE"/>
